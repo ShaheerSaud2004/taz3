@@ -87,11 +87,7 @@
                     <p>Eco-friendly materials and sustainable production processes ensure your brand promotes environmental responsibility.</p>
                 </div>
                 
-                <div class="about-card">
-                    <div class="card-icon">⚡</div>
-                    <h3>Rapid Turnaround</h3>
-                    <p>From concept to delivery in 14 days. Our streamlined process ensures your projects stay on schedule.</p>
-                </div>
+
                 
                 <div class="about-card">
                     <div class="card-icon">💎</div>
@@ -160,7 +156,7 @@
             
             <div class="portfolio-grid">
                 <div class="portfolio-card">
-                    <div class="portfolio-image">
+                    <div class="portfolio-image" style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
                         <div class="portfolio-overlay">
                             <button class="view-case-study">View Case Study</button>
                         </div>
@@ -176,7 +172,7 @@
                 </div>
                 
                 <div class="portfolio-card">
-                    <div class="portfolio-image">
+                    <div class="portfolio-image" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');">
                         <div class="portfolio-overlay">
                             <button class="view-case-study">View Case Study</button>
                         </div>
@@ -192,7 +188,7 @@
                 </div>
                 
                 <div class="portfolio-card">
-                    <div class="portfolio-image">
+                    <div class="portfolio-image" style="background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
                         <div class="portfolio-overlay">
                             <button class="view-case-study">View Case Study</button>
                         </div>
@@ -226,16 +222,22 @@
                     <div class="contact-details">
                         <div class="contact-item">
                             <div class="contact-icon">📧</div>
-                            <span>hello@tinker.com</span>
+                            <a href="mailto:Majidtaseen@gmail.com" class="contact-link">Majidtaseen@gmail.com</a>
                         </div>
+                        <span class="contact-separator">|</span>
                         <div class="contact-item">
                             <div class="contact-icon">📞</div>
-                            <span>+1 (555) 123-4567</span>
+                            <a href="tel:+18484594141" class="contact-link">+1 (848) 459-4141</a>
                         </div>
                     </div>
                 </div>
                 
-                <form class="contact-form" id="contactForm">
+                <form class="contact-form" id="contactForm" action="https://formspree.io/f/mkgzkbny" method="POST">
+                    <input type="hidden" name="_subject" value="New Contact Form Submission from {{name}}">
+                    <input type="hidden" name="_replyto" value="{{email}}">
+                    <input type="hidden" name="_cc" value="{{email}}">
+                    <input type="hidden" name="_format" value="html">
+                    <input type="hidden" name="_autoresponse" value="Thank you for contacting us! We have received your message and will get back to you within 24 hours. - tINKer Team">
                     <div class="form-group">
                         <input type="text" id="name" name="name" placeholder="Your Name" required>
                         <span class="form-error"></span>
@@ -258,7 +260,13 @@
                             <option value="packaging">Design & Packaging</option>
                             <option value="bulk-production">Bulk Production</option>
                             <option value="consultation">Consultation</option>
+                            <option value="other">Other (specify below)</option>
                         </select>
+                        <span class="form-error"></span>
+                    </div>
+                    
+                    <div class="form-group" id="customProjectTypeGroup" style="display: none;">
+                        <input type="text" id="customProjectType" name="customProjectType" placeholder="Please specify your project type..." maxlength="100">
                         <span class="form-error"></span>
                     </div>
                     

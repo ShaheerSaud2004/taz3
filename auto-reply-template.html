@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank you for contacting tINKer</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .email-container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #5865F2, #7C8AFF);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 600;
+        }
+        .header p {
+            margin: 15px 0 0 0;
+            opacity: 0.9;
+            font-size: 18px;
+        }
+        .content {
+            padding: 40px 30px;
+        }
+        .greeting {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .message {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        .next-steps {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #5865F2;
+            margin-bottom: 30px;
+        }
+        .next-steps h3 {
+            color: #5865F2;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        .next-steps ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .next-steps li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+        .contact-info {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .contact-info h3 {
+            color: #5865F2;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        .contact-details {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .contact-item {
+            text-align: center;
+        }
+        .contact-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        .contact-label {
+            font-weight: 600;
+            color: #5865F2;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .contact-value {
+            color: #333;
+            font-size: 16px;
+        }
+        .footer {
+            background: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            border-top: 1px solid #e9ecef;
+        }
+        .logo {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #5865F2, #7C8AFF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .footer p {
+            margin: 8px 0;
+            color: #666;
+            font-size: 14px;
+        }
+        .social-links {
+            margin-top: 20px;
+        }
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 10px 15px;
+            background: #5865F2;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: background 0.3s ease;
+        }
+        .social-links a:hover {
+            background: #4752C4;
+        }
+        .timestamp {
+            background: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #666;
+        }
+        @media (max-width: 600px) {
+            .contact-details {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .content {
+                padding: 30px 20px;
+            }
+            .header {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <div class="logo">tINKer</div>
+            <h1>Thank You!</h1>
+            <p>We've received your message and appreciate you reaching out</p>
+        </div>
+        
+        <div class="content">
+            <div class="greeting">
+                Dear {{name}},
+            </div>
+            
+            <div class="message">
+                Thank you for contacting <strong>tINKer</strong>! We're excited to help you create unforgettable sensory experiences with our premium branded air fresheners.
+            </div>
+            
+            <div class="next-steps">
+                <h3>📋 What happens next?</h3>
+                <ul>
+                    <li><strong>Within 24 hours:</strong> Our team will review your project requirements</li>
+                    <li><strong>Personal consultation:</strong> We'll schedule a call to discuss your specific needs</li>
+                    <li><strong>Custom proposal:</strong> Receive a tailored solution for your project</li>
+                    <li><strong>Project kickoff:</strong> Begin creating your unique scent experience</li>
+                </ul>
+            </div>
+            
+            <div class="contact-info">
+                <h3>📞 Need immediate assistance?</h3>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-label">Email</div>
+                        <div class="contact-value">Majidtaseen@gmail.com</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-label">Phone</div>
+                        <div class="contact-value">+1 (848) 459-4141</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timestamp">
+                📅 This message was sent on {{_date}} at {{_time}}
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="logo">tINKer</div>
+            <p><strong>Premium Branded Air Fresheners</strong></p>
+            <p>Creating unforgettable sensory experiences</p>
+            <p>Custom Scent Development • Design & Packaging • Bulk Production • Consultation</p>
+            
+            <div class="social-links">
+                <a href="#">LinkedIn</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

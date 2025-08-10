@@ -7,8 +7,13 @@ const contactForm = document.getElementById('contactForm');
 const statNumbers = document.querySelectorAll('.stat-number');
 const heroButtons = document.querySelectorAll('.hero-buttons .btn');
 
+// Formspree Configuration
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mkgzkbny';
+
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
+    // initializeEmailJS(); // Commented out for Formspree
+    initializeCustomProjectType();
     initializeNavigation();
     initializeScrollEffects();
     initializeAnimatedCounters();
@@ -17,6 +22,32 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeButtonEffects();
     initializeParallaxEffects();
 });
+
+// Initialize Formspree (if needed for custom handling)
+function initializeFormspree() {
+    console.log('Formspree endpoint:', FORMSPREE_ENDPOINT);
+}
+
+// Handle custom project type field
+function initializeCustomProjectType() {
+    const projectTypeSelect = document.getElementById('projectType');
+    const customProjectTypeGroup = document.getElementById('customProjectTypeGroup');
+    const customProjectTypeInput = document.getElementById('customProjectType');
+
+    if (projectTypeSelect && customProjectTypeGroup && customProjectTypeInput) {
+        projectTypeSelect.addEventListener('change', function() {
+            if (this.value === 'other') {
+                customProjectTypeGroup.style.display = 'block';
+                customProjectTypeInput.setAttribute('required', 'required');
+                customProjectTypeInput.focus();
+            } else {
+                customProjectTypeGroup.style.display = 'none';
+                customProjectTypeInput.removeAttribute('required');
+                customProjectTypeInput.value = '';
+            }
+        });
+    }
+}
 
 // Navigation Functionality
 function initializeNavigation() {
@@ -77,7 +108,7 @@ function initializeScrollEffects() {
         // Navbar background opacity
         if (scrolled > 100) {
             navbar.style.background = 'rgba(10, 10, 10, 0.95)';
-            navbar.style.boxShadow = '0 4px 20px rgba(255, 0, 64, 0.1)';
+            navbar.style.boxShadow = '0 4px 20px rgba(88, 101, 242, 0.1)';
         } else {
             navbar.style.background = 'rgba(10, 10, 10, 0.8)';
             navbar.style.boxShadow = 'none';
@@ -257,8 +288,8 @@ function showFieldError(field, message) {
         errorElement.textContent = message;
         errorElement.style.display = 'block';
     }
-    field.style.borderColor = '#ff4d6b';
-    field.style.boxShadow = '0 0 10px rgba(255, 77, 107, 0.3)';
+    field.style.borderColor = '#7C8AFF';
+    field.style.boxShadow = '0 0 10px rgba(124, 138, 255, 0.3)';
 }
 
 function clearFieldError(field) {
@@ -267,7 +298,7 @@ function clearFieldError(field) {
         errorElement.textContent = '';
         errorElement.style.display = 'none';
     }
-    field.style.borderColor = 'rgba(255, 0, 64, 0.3)';
+    field.style.borderColor = 'rgba(88, 101, 242, 0.3)';
     field.style.boxShadow = 'none';
 }
 
@@ -278,13 +309,13 @@ function showFormError(message) {
         errorDiv = document.createElement('div');
         errorDiv.className = 'form-general-error';
         errorDiv.style.cssText = `
-            color: #ff4d6b;
+            color: #7C8AFF;
             text-align: center;
             margin-bottom: 1rem;
             padding: 0.5rem;
-            border: 1px solid #ff4d6b;
+            border: 1px solid #7C8AFF;
             border-radius: 5px;
-            background: rgba(255, 77, 107, 0.1);
+            background: rgba(124, 138, 255, 0.1);
         `;
         contactForm.insertBefore(errorDiv, contactForm.firstChild);
     }
@@ -306,16 +337,50 @@ function submitForm() {
     submitButton.disabled = true;
     submitButton.classList.add('loading');
 
-    // Simulate form submission (replace with actual API call)
-    setTimeout(() => {
-        showSuccessMessage();
-        contactForm.reset();
+    // Get form data
+    const projectType = document.getElementById('projectType').value;
+    const customProjectType = document.getElementById('customProjectType').value;
+    
+    const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        company: document.getElementById('company').value,
+        projectType: projectType === 'other' ? customProjectType : projectType,
+        message: document.getElementById('message').value,
+        to_email: 'Majidtaseen@gmail.com'
+    };
+
+    // Send form using Formspree
+    fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+    })
+    .then(response => {
+        if (response.ok) {
+            console.log('SUCCESS! Form submitted');
+            showSuccessMessage();
+            contactForm.reset();
+            
+            // Reset button
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+            submitButton.classList.remove('loading');
+        } else {
+            throw new Error('Form submission failed');
+        }
+    })
+    .catch(error => {
+        console.log('FAILED...', error);
+        showFormError('Failed to send message. Please try again or contact us directly.');
         
         // Reset button
         submitButton.textContent = originalText;
         submitButton.disabled = false;
         submitButton.classList.remove('loading');
-    }, 2000);
+    });
 }
 
 function showSuccessMessage() {
@@ -492,7 +557,7 @@ function showCaseStudyModal(button) {
     modalContent.style.cssText = `
         background: rgba(42, 42, 42, 0.9);
         backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 0, 64, 0.3);
+        border: 1px solid rgba(88, 101, 242, 0.3);
         border-radius: 20px;
         padding: 2rem;
         max-width: 500px;
@@ -504,11 +569,11 @@ function showCaseStudyModal(button) {
     `;
 
     modalContent.innerHTML = `
-        <h3 style="color: #ff0040; margin-bottom: 1rem; font-size: 1.5rem;">${title}</h3>
+        <h3 style="color: #5865F2; margin-bottom: 1rem; font-size: 1.5rem;">${title}</h3>
         <p style="line-height: 1.6; margin-bottom: 1.5rem; color: rgba(255, 255, 255, 0.8);">${description}</p>
         <p style="margin-bottom: 1.5rem; color: rgba(255, 255, 255, 0.6);">This is a preview of the case study. In a real implementation, this would show detailed project information, results, and images.</p>
         <button onclick="this.closest('.modal').remove()" style="
-            background: linear-gradient(135deg, #ff0040, #ff4d6b);
+            background: linear-gradient(135deg, #5865F2, #7C8AFF);
             color: white;
             border: none;
             padding: 0.75rem 1.5rem;

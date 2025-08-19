@@ -543,12 +543,17 @@ body {
 }
 
 .stat-item {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
     background: var(--glass-bg);
     backdrop-filter: blur(20px);
     border: 1px solid var(--glass-border);
     border-radius: 20px;
     padding: var(--spacing-lg);
-    text-align: center;
     box-shadow: var(--glass-shadow);
     transition: all var(--transition-medium);
 }
@@ -588,6 +593,7 @@ body {
     color: rgba(255, 255, 255, 0.7);
     text-transform: uppercase;
     letter-spacing: 1px;
+    white-space: nowrap;
 }
 
 .hero-buttons {

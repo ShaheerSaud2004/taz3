@@ -425,7 +425,7 @@ function initializeButtonEffects() {
         button.addEventListener('click', function() {
             const buttonText = this.textContent.trim();
             
-            if (buttonText === 'Get your personalized air freshener now') {
+            if (buttonText === 'Start Your Project') {
                 // Scroll to contact section
                 const contactSection = document.querySelector('#contact');
                 if (contactSection) {

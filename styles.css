@@ -219,8 +219,8 @@ body {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
-    animation: accentShimmer 3s ease-in-out infinite;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: accentShimmer 4s ease-in-out infinite;
 }
 
 /* Buttons */
@@ -597,46 +597,12 @@ body {
     width: 100%;
     height: 100%;
     background: 
-        radial-gradient(circle at 20% 30%, rgba(88, 101, 242, 0.08) 0%, transparent 40%),
-        radial-gradient(circle at 80% 70%, rgba(124, 138, 255, 0.05) 0%, transparent 45%),
-        radial-gradient(circle at 50% 50%, rgba(88, 101, 242, 0.03) 0%, transparent 50%);
-    animation: aboutFloat 25s ease-in-out infinite;
+        radial-gradient(circle at 20% 30%, rgba(88, 101, 242, 0.03) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(124, 138, 255, 0.02) 0%, transparent 45%);
 }
 
 .about-particles {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
-.about-particle {
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    background: linear-gradient(45deg, rgba(88, 101, 242, 0.8), rgba(124, 138, 255, 0.6));
-    border-radius: 50%;
-    animation: aboutParticle 15s linear infinite;
-}
-
-.about-particle:nth-child(1) {
-    top: 20%;
-    left: 15%;
-    animation-delay: 0s;
-}
-
-.about-particle:nth-child(2) {
-    top: 60%;
-    left: 85%;
-    animation-delay: 5s;
-}
-
-.about-particle:nth-child(3) {
-    top: 80%;
-    left: 25%;
-    animation-delay: 10s;
+    display: none;
 }
 
 .about-grid {
@@ -647,9 +613,9 @@ body {
 }
 
 .about-card {
-    animation: cardAppear 0.8s ease-out forwards;
+    animation: cardAppear 0.6s ease-out forwards;
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
 }
 
 .about-card:nth-child(1) {
@@ -657,26 +623,24 @@ body {
 }
 
 .about-card:nth-child(2) {
-    animation-delay: 0.3s;
+    animation-delay: 0.2s;
 }
 
 .about-card:nth-child(3) {
-    animation-delay: 0.5s;
+    animation-delay: 0.3s;
 }
-    background: linear-gradient(135deg, rgba(88, 101, 242, 0.12), rgba(124, 138, 255, 0.06));
-    backdrop-filter: blur(25px);
-    border: 1px solid rgba(88, 101, 242, 0.25);
-    border-radius: 30px;
+
+.about-card {
+    background: linear-gradient(135deg, rgba(88, 101, 242, 0.08), rgba(124, 138, 255, 0.04));
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(88, 101, 242, 0.2);
+    border-radius: 20px;
     padding: var(--spacing-2xl);
     text-align: center;
     transition: all var(--transition-medium);
-    box-shadow: 
-        0 8px 32px rgba(0, 0, 0, 0.3),
-        0 0 0 1px rgba(88, 101, 242, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     position: relative;
     overflow: hidden;
-    transform-style: preserve-3d;
-    perspective: 1000px;
 }
 
 .about-card::before {
@@ -696,13 +660,12 @@ body {
 }
 
 .about-card:hover {
-    transform: translateY(-20px) scale(1.03) rotateX(5deg);
+    transform: translateY(-10px) scale(1.02);
     box-shadow: 
-        0 30px 80px rgba(88, 101, 242, 0.3),
-        0 0 0 1px rgba(88, 101, 242, 0.2),
-        0 0 40px rgba(88, 101, 242, 0.1);
+        0 20px 50px rgba(88, 101, 242, 0.2),
+        0 0 0 1px rgba(88, 101, 242, 0.15);
     border-color: var(--primary-red);
-    background: linear-gradient(135deg, rgba(88, 101, 242, 0.18), rgba(124, 138, 255, 0.1));
+    background: linear-gradient(135deg, rgba(88, 101, 242, 0.15), rgba(124, 138, 255, 0.08));
 }
 
 .about-card::after {
@@ -712,9 +675,9 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.05) 50%, transparent 70%);
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.03) 50%, transparent 70%);
     transform: translateX(-100%);
-    transition: transform 0.6s ease;
+    transition: transform 0.8s ease;
 }
 
 .about-card:hover::after {

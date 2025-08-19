@@ -425,7 +425,7 @@ function initializeButtonEffects() {
         button.addEventListener('click', function() {
             const buttonText = this.textContent.trim();
             
-            if (buttonText === 'Start Your Project') {
+            if (buttonText === 'Create Your Brand\'s Signature Scent') {
                 // Scroll to contact section
                 const contactSection = document.querySelector('#contact');
                 if (contactSection) {

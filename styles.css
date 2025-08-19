@@ -968,6 +968,44 @@ body {
     font-weight: 300;
 }
 
+.contact-photo {
+    margin-top: var(--spacing-2xl);
+    text-align: center;
+}
+
+.founder-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(88, 101, 242, 0.3);
+    box-shadow: 0 8px 32px rgba(88, 101, 242, 0.2);
+    transition: all var(--transition-medium);
+}
+
+.founder-photo:hover {
+    transform: scale(1.05);
+    border-color: rgba(88, 101, 242, 0.6);
+    box-shadow: 0 12px 40px rgba(88, 101, 242, 0.3);
+}
+
+.photo-caption {
+    margin-top: var(--spacing-md);
+}
+
+.photo-caption h4 {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--primary-white);
+    margin-bottom: var(--spacing-xs);
+}
+
+.photo-caption p {
+    font-size: var(--font-size-sm);
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 400;
+}
+
 .contact-icon {
     font-size: var(--font-size-xl);
     filter: drop-shadow(0 0 10px rgba(88, 101, 242, 0.3));

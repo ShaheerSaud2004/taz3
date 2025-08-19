@@ -13,7 +13,6 @@ const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mkgzkbny';
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     // initializeEmailJS(); // Commented out for Formspree
-    initializeCustomProjectType();
     initializeNavigation();
     initializeScrollEffects();
     initializeAnimatedCounters();
@@ -28,26 +27,7 @@ function initializeFormspree() {
     console.log('Formspree endpoint:', FORMSPREE_ENDPOINT);
 }
 
-// Handle custom project type field
-function initializeCustomProjectType() {
-    const projectTypeSelect = document.getElementById('projectType');
-    const customProjectTypeGroup = document.getElementById('customProjectTypeGroup');
-    const customProjectTypeInput = document.getElementById('customProjectType');
 
-    if (projectTypeSelect && customProjectTypeGroup && customProjectTypeInput) {
-        projectTypeSelect.addEventListener('change', function() {
-            if (this.value === 'other') {
-                customProjectTypeGroup.style.display = 'block';
-                customProjectTypeInput.setAttribute('required', 'required');
-                customProjectTypeInput.focus();
-            } else {
-                customProjectTypeGroup.style.display = 'none';
-                customProjectTypeInput.removeAttribute('required');
-                customProjectTypeInput.value = '';
-            }
-        });
-    }
-}
 
 // Navigation Functionality
 function initializeNavigation() {
@@ -445,7 +425,7 @@ function initializeButtonEffects() {
         button.addEventListener('click', function() {
             const buttonText = this.textContent.trim();
             
-            if (buttonText === 'Start Your Project') {
+            if (buttonText === 'Get your personalized air freshener now') {
                 // Scroll to contact section
                 const contactSection = document.querySelector('#contact');
                 if (contactSection) {

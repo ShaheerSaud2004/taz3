@@ -558,8 +558,14 @@ body {
     box-shadow: 0 12px 40px rgba(88, 101, 242, 0.2);
 }
 
+.stat-number-container {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 2px;
+}
+
 .stat-number {
-    display: block;
     font-size: var(--font-size-3xl);
     font-weight: 800;
     background: var(--gradient-primary);

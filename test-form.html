@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Test</title>
+</head>
+<body>
+    <h1>Test Form Submission</h1>
+    <form action="https://formspree.io/f/mkgzkbny" method="POST">
+        <input type="hidden" name="_cc" value="shaheersaud2004@gmail.com">
+        <input type="hidden" name="_subject" value="Test Form Submission">
+        
+        <p>
+            <label>Name:</label><br>
+            <input type="text" name="name" value="Test User" required>
+        </p>
+        
+        <p>
+            <label>Email:</label><br>
+            <input type="email" name="email" value="test@example.com" required>
+        </p>
+        
+        <p>
+            <label>Message:</label><br>
+            <textarea name="message" required>This is a test message to verify form submission works.</textarea>
+        </p>
+        
+        <button type="submit">Send Test</button>
+    </form>
+    
+    <p><strong>Instructions:</strong></p>
+    <ul>
+        <li>Fill out the form (pre-filled with test data)</li>
+        <li>Click "Send Test"</li>
+        <li>You should be redirected to a Formspree success page</li>
+        <li>Check your email (shaheersaud2004@gmail.com) for the submission</li>
+    </ul>
+</body>
+</html>

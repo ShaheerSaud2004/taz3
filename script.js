@@ -318,16 +318,12 @@ function submitForm() {
     submitButton.classList.add('loading');
 
     // Get form data
-    const projectType = document.getElementById('projectType').value;
-    const customProjectType = document.getElementById('customProjectType').value;
-    
     const formData = {
         name: document.getElementById('name').value,
         email: document.getElementById('email').value,
         company: document.getElementById('company').value,
-        projectType: projectType === 'other' ? customProjectType : projectType,
         message: document.getElementById('message').value,
-        to_email: 'Majidtaseen@gmail.com'
+        to_email: 'Tinkerllcnj@gmail.com'
     };
 
     // Send form using Formspree

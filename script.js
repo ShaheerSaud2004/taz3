@@ -318,11 +318,23 @@ function submitForm() {
     submitButton.classList.add('loading');
 
     // Get form data
+    const nameField = document.getElementById('name');
+    const emailField = document.getElementById('email');
+    const companyField = document.getElementById('company');
+    const messageField = document.getElementById('message');
+    
+    if (!nameField || !emailField || !companyField || !messageField) {
+        console.error('Form fields not found');
+        showFormError('Form error. Please refresh the page and try again.');
+        resetSubmitButton();
+        return;
+    }
+    
     const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        company: document.getElementById('company').value,
-        message: document.getElementById('message').value,
+        name: nameField.value,
+        email: emailField.value,
+        company: companyField.value,
+        message: messageField.value,
         to_email: 'Tinkerllcnj@gmail.com'
     };
 
